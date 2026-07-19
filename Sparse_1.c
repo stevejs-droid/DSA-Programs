@@ -1,10 +1,3 @@
-                                                /*********Sparse Matrix Addition & Transpose*********
-
-                                                              NAME:STEVE J. STEPHEN
-
-                                                              ROLL NO:68
-
-                                                              DATE:16/07/26*/
 #include <stdio.h>
 void addSparse(int A[][3], int B[][3], int C[][3])
 {
