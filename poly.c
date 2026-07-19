@@ -1,10 +1,3 @@
-                                                    /*********POLYNOMIAL ADDITION*********
-
-                                                              NAME:STEVE J. STEPHEN
-
-                                                              ROLL NO:68
-
-                                                              DATE:09/07/26*/
 #include <stdio.h>
 struct poly
 {
