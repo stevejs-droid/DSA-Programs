@@ -1,0 +1,21 @@
+## **Algorithm: Sparse Matrix Addition and Transpose (Fast Transpose Method)**
+
+1. Start.
+2. Read the number of rows, columns, and non-zero elements of Sparse Matrix A.
+3. Read the row, column, and value of each non-zero element of Matrix A in 3-tuple format.
+4. Read the number of rows, columns, and non-zero elements of Sparse Matrix B.
+5. Read the row, column, and value of each non-zero element of Matrix B in 3-tuple format.
+6. Check whether the dimensions of Matrix A and Matrix B are equal. If not equal, display **"Addition not possible"** and stop.
+7. Initialize indices `i`, `j`, and `k` to 1 and copy the matrix dimensions to the resultant sparse matrix `C`.
+8. Compare the row and column indices of the current elements of A and B:
+
+   * If both positions are the same, add their values and store the result in `C`.
+   * If the position in A comes first, copy the element from A to `C`.
+   * Otherwise, copy the element from B to `C`.
+9. Copy any remaining non-zero elements from Matrix A or Matrix B to the resultant matrix `C`.
+10. Store the total number of non-zero elements in the header of `C` and display the resultant sparse matrix.
+11. To transpose the resultant sparse matrix, count the number of elements in each column using the `rowTerms` array.
+12. Compute the starting position of each column in the transposed matrix using the `startPos` array.
+13. Place each non-zero element of the resultant matrix into its correct transposed position by interchanging its row and column indices.
+14. Display the transposed sparse matrix.
+15. Stop.
