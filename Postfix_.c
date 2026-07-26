@@ -1,18 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <math.h>
 
-#define MAX 100
+#define N 100
 
-// Stack for operators
-char opStack[MAX];
+char opStack[N];
 int opTop = -1;
 
-// Stack for evaluation
-int valStack[MAX];
+int valStack[N];
 int valTop = -1;
 
-// Operator stack functions
 void pushOp(char x)
 {
     opStack[++opTop] = x;
@@ -28,7 +24,6 @@ char peekOp()
     return opStack[opTop];
 }
 
-// Value stack functions
 void pushVal(int x)
 {
     valStack[++valTop] = x;
@@ -39,8 +34,7 @@ int popVal()
     return valStack[valTop--];
 }
 
-// Operator precedence
-int precedence(char x)
+int prece(char x)
 {
     if (x == '(')
         return 0;
@@ -53,9 +47,23 @@ int precedence(char x)
     return -1;
 }
 
+// Function to calculate power
+int power(int base, int exp)
+{
+    int result = 1;
+
+    while (exp > 0)
+    {
+        result *= base;
+        exp--;
+    }
+
+    return result;
+}
+
 int main()
 {
-    char infix[MAX], postfix[MAX];
+    char infix[N], postfix[N];
     int i = 0, j = 0;
     char ch;
 
@@ -82,7 +90,7 @@ int main()
         }
         else
         {
-            while (opTop != -1 && precedence(peekOp()) >= precedence(ch))
+            while (opTop != -1 && prece(peekOp()) >= prece(ch))
                 postfix[j++] = popOp();
 
             pushOp(ch);
@@ -103,9 +111,19 @@ int main()
 
     while ((ch = postfix[i]) != '\0')
     {
-        if (isdigit(ch))
+        if (isalnum(ch))
         {
-            pushVal(ch - '0');
+            if (isdigit(ch))
+            {
+                pushVal(ch - '0');
+            }
+            else
+            {
+                int value;
+                printf("Enter value of %c: ", ch);
+                scanf("%d", &value);
+                pushVal(value);
+            }
         }
         else
         {
@@ -135,7 +153,7 @@ int main()
                     break;
 
                 case '^':
-                    pushVal((int)pow(b, a));
+                    pushVal(power(b, a));
                     break;
             }
         }
@@ -144,84 +162,6 @@ int main()
     }
 
     printf("Result = %d\n", popVal());
-
-    return 0;
-}        case '/':
-        case '%': return 2;
-        case '^': return 3;
-    }
-    return 0;
-}
-
-int main()
-{
-    char infix[MAX], postfix[MAX];
-    int i = 0, j = 0, a, b, result;
-
-    printf("Enter infix expression: ");
-    scanf("%s", infix);
-
-    // Infix to Postfix Conversion
-    while(infix[i] != '\0')
-    {
-        if(isdigit(infix[i]))
-        {
-            postfix[j++] = infix[i];
-        }
-        else if(infix[i] == '(')
-        {
-            pushOp(infix[i]);
-        }
-        else if(infix[i] == ')')
-        {
-            while(opStack[top1] != '(')
-                postfix[j++] = popOp();
-            popOp();
-        }
-        else
-        {
-            while(top1 != -1 && precedence(opStack[top1]) >= precedence(infix[i]))
-                postfix[j++] = popOp();
-            pushOp(infix[i]);
-        }
-        i++;
-    }
-
-    while(top1 != -1)
-        postfix[j++] = popOp();
-
-    postfix[j] = '\0';
-
-    printf("Postfix Expression: %s\n", postfix);
-
-    // Postfix Evaluation
-    i = 0;
-    while(postfix[i] != '\0')
-    {
-        if(isdigit(postfix[i]))
-        {
-            pushVal(postfix[i] - '0');
-        }
-        else
-        {
-            b = popVal();
-            a = popVal();
-
-            switch(postfix[i])
-            {
-                case '+': result = a + b; break;
-                case '-': result = a - b; break;
-                case '*': result = a * b; break;
-                case '/': result = a / b; break;
-                case '%': result = a % b; break;
-            }
-
-            pushVal(result);
-        }
-        i++;
-    }
-
-    printf("Evaluated Result = %d\n", popVal());
 
     return 0;
 }
