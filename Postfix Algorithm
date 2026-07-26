@@ -1,37 +1,18 @@
-Algorithm: Infix to Postfix Conversion and Postfix Evaluation Using Stack
+### **Algorithm: Infix to Postfix Conversion and Postfix Evaluation Using Stack**
 
 1. Start.
-
-2. Define an operator stack (opStack) and a value stack (valStack).
-
+2. Define an operator stack (`opStack`) and a value stack (`valStack`).
 3. Read the infix expression from the user.
-
-4. Initialize i = 0 and j = 0.
-
-5. Scan the infix expression from left to right until the null character ('\0') is encountered.
-
-6. If the current character is an operand (isalnum), append it to the postfix expression.
-
-7. If the current character is '(', push it onto the operator stack.
-
-8. If the current character is ')', repeatedly pop operators from the operator stack and append them to the postfix expression until '(' is found, then remove '(' from the stack.
-
-9. If the current character is an operator (+, -, *, /, %, ^), repeatedly pop operators from the stack while it is not empty and the precedence of the operator at the top is greater than or equal to the precedence of the current operator. Append each popped operator to the postfix expression, then push the current operator onto the stack.
-
-10. Continue scanning until all characters in the infix expression have been processed.
-
-11. Pop all remaining operators from the operator stack and append them to the postfix expression.
-
-12. Append the null character ('\0') to the postfix expression and display the postfix expression.
-
-13. Initialize i = 0 and scan the postfix expression from left to right.
-
-14. If the current character is a digit (isdigit), convert it into an integer using ch - '0' and push it onto the value stack.
-
-15. If the current character is an operator, pop the top two operands, perform the corresponding operation (+, -, *, /, %, ^), and push the result back onto the value stack.
-
-16. Continue scanning until all characters in the postfix expression have been processed.
-
-17. Pop the final value from the value stack and display it as the evaluated result.
-
-18. Stop.
+4. Scan the infix expression from left to right.
+5. If the current symbol is an operand (`isalnum`), append it to the postfix expression.
+6. If the current symbol is `'('`, push it onto the operator stack.
+7. If the current symbol is `')'`, pop and append operators until `'('` is encountered, then remove `'('` from the stack.
+8. If the current symbol is an operator (`+`, `-`, `*`, `/`, `%`, `^`), compare its precedence with the operator at the top of the stack. While the stack is not empty and the top operator has **greater than or equal precedence**, pop and append it to the postfix expression. Then push the current operator onto the stack.
+9. After scanning the entire infix expression, pop all remaining operators from the stack and append them to the postfix expression.
+10. Display the postfix expression.
+11. Scan the postfix expression from left to right.
+12. If the current symbol is an operand, push its value onto the value stack. If it is an alphabet, read its value from the user before pushing it.
+13. If the current symbol is an operator (`+`, `-`, `*`, `/`, `%`, `^`), pop the top two operands, perform the corresponding operation (use the `power()` function for `^`), and push the result onto the value stack.
+14. Continue until the entire postfix expression is evaluated.
+15. Pop and display the final result.
+16. Stop.
