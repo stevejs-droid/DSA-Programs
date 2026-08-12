@@ -4,7 +4,6 @@
 int deque[MAX];
 int front = -1, rear = -1;
 
-// Insert at rear
 void insertRear(int x) {
     if((front == 0 && rear == MAX-1) || (rear+1)%MAX == front) {
         printf("Deque Overflow!\n");
@@ -16,7 +15,6 @@ void insertRear(int x) {
     }
 }
 
-// Insert at front
 void insertFront(int x) {
     if((front == 0 && rear == MAX-1) || (rear+1)%MAX == front) {
         printf("Deque Overflow!\n");
@@ -28,7 +26,6 @@ void insertFront(int x) {
     }
 }
 
-// Delete from front
 void deleteFront() {
     if(front == -1) {
         printf("Deque Underflow!\n");
@@ -39,7 +36,6 @@ void deleteFront() {
     }
 }
 
-// Delete from rear
 void deleteRear() {
     if(front == -1) {
         printf("Deque Underflow!\n");
@@ -50,7 +46,6 @@ void deleteRear() {
     }
 }
 
-// Display deque
 void display() {
     if(front == -1) {
         printf("Deque is empty\n");
