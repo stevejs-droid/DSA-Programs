@@ -1,0 +1,35 @@
+ALGORITHM: CIRCULAR DOUBLE-ENDED QUEUE (DEQUE)
+ * Start.
+ * Define a fixed-size array (deque[MAX]) and initialize pointers front = -1 and rear = -1.
+ * Display the main menu and read the user's choice (choice).
+ * If choice == 1 (Insert Front):
+   * Check for overflow: If (front == 0 && rear == MAX - 1) || (rear + 1) % MAX == front, display "Deque Overflow" and return to menu.
+   * Read the input value x.
+   * If front == -1 (deque is empty), set front = 0 and rear = 0.
+   * Else, set front = (front - 1 + MAX) % MAX (circular decrement).
+   * Assign deque[front] = x and display insertion success.
+ * If choice == 2 (Insert Rear):
+   * Check for overflow: If (front == 0 && rear == MAX - 1) || (rear + 1) % MAX == front, display "Deque Overflow" and return to menu.
+   * Read the input value x.
+   * If front == -1 (deque is empty), set front = 0 and rear = 0.
+   * Else, set rear = (rear + 1) % MAX (circular increment).
+   * Assign deque[rear] = x and display insertion success.
+ * If choice == 3 (Delete Front):
+   * Check for underflow: If front == -1, display "Deque Underflow" and return to menu.
+   * Display deque[front] as the deleted element.
+   * If front == rear (single element present), set front = -1 and rear = -1 to reset the deque.
+   * Else, set front = (front + 1) % MAX (circular increment).
+ * If choice == 4 (Delete Rear):
+   * Check for underflow: If front == -1, display "Deque Underflow" and return to menu.
+   * Display deque[rear] as the deleted element.
+   * If front == rear (single element present), set front = -1 and rear = -1 to reset the deque.
+   * Else, set rear = (rear - 1 + MAX) % MAX (circular decrement).
+ * If choice == 5 (Display):
+   * Check if empty: If front == -1, display "Deque is Empty" and return to menu.
+   * Set index variable i = front.
+   * Traverse circularly: Print deque[i]. If i == rear, break loop; else set i = (i + 1) % MAX and continue the process.
+ * If choice == 6 (Exit):
+   * Terminate the program.
+ * If choice is invalid, display "Invalid Choice" and prompt user again.
+ * Return to step 3 until the user chooses to exit.
+ * Stop.
