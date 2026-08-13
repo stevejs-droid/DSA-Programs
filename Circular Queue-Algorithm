@@ -1,0 +1,53 @@
+Algorithm: Circular Queue Using Array
+
+1. Start.
+
+2. Initialize front = -1, rear = -1, and create an array queue[MAX].
+
+3. Display the menu with options Enqueue, Dequeue, Display, and Exit.
+
+4. Read the user's choice.
+
+5. If the choice is Enqueue:
+
+Read the element.
+
+Check whether (rear + 1) % MAX == front.
+
+If true, display Queue Overflow.
+
+Otherwise, if the queue is empty (front == -1), set front = rear = 0.
+
+Else, set rear = (rear + 1) % MAX.
+
+Insert the element at queue[rear].
+
+6. If the choice is Dequeue:
+
+Check whether front == -1.
+
+If true, display Queue Underflow.
+
+Otherwise, store queue[front] in item.
+
+If front == rear, set front = rear = -1.
+
+Else, set front = (front + 1) % MAX.
+
+Display the deleted element.
+
+7. If the choice is Display:
+
+Check whether front == -1.
+
+If true, display Queue is Empty.
+
+Otherwise, start from front and display each element until rear is reached, using (i + 1) % MAX.
+
+8. If the choice is Exit, terminate the program.
+
+9. For an invalid choice, display Invalid choice.
+
+10. Repeat the menu until the user selects Exit.
+
+11. Stop.
