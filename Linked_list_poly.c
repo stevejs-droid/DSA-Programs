@@ -117,7 +117,7 @@ int main() {
 
     poly3 = addPoly(poly1, poly2);
 
-    printf("Sum:          ");
+    printf("Sum:  ");
     display(poly3);
 
     freePoly(poly1);
