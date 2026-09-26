@@ -1,0 +1,41 @@
+1. Start.
+2. Initialize current = NULL.
+3. Display the browser navigation menu:
+      1. Visit New Page
+      2. Go Back
+      3. Go Forward
+      4. Display Current Page
+      5. Exit
+4. Read the user's choice.
+
+5. If choice = 1 (Visit New Page):
+      a. Read the URL.
+      b. If forward history exists, delete all nodes after current.
+      c. Create a new node and store the URL.
+      d. Set newNode->prev = current and newNode->next = NULL.
+      e. If current is not NULL, set current->next = newNode.
+      f. Make newNode the current page.
+      g. Display the visited page.
+
+6. If choice = 2 (Go Back):
+      a. If current is NULL or current->prev is NULL, display "Cannot go back".
+      b. Otherwise, move current to current->prev.
+      c. Display the current page.
+
+7. If choice = 3 (Go Forward):
+      a. If current is NULL or current->next is NULL, display "Cannot go forward".
+      b. Otherwise, move current to current->next.
+      c. Display the current page.
+
+8. If choice = 4 (Display Current Page):
+      a. If current is NULL, display "No page visited yet".
+      b. Otherwise, display the current URL.
+
+9. If choice = 5 (Exit):
+      a. Move current to the first node.
+      b. Free all nodes.
+      c. Exit the program.
+
+10. If the choice is invalid, display "Invalid choice".
+11. Repeat steps 3 to 10 until the user selects Exit.
+12. Stop.
