@@ -1,0 +1,42 @@
+1. Start.
+2. Initialize root = NULL.
+3. Display the BST menu:
+      1. Insert
+      2. Search
+      3. Delete
+      4. Inorder Traversal
+      5. Exit
+4. Read the user's choice.
+
+5. If choice = 1 (Insert):
+      a. Read the value.
+      b. If root is NULL, create a new node and make it root.
+      c. If value < root->data, insert into the left subtree.
+      d. If value > root->data, insert into the right subtree.
+      e. Repeat until the correct position is found.
+
+6. If choice = 2 (Search):
+      a. Read the value.
+      b. If root is NULL or root->data equals the value, return the result.
+      c. If value < root->data, search in the left subtree.
+      d. Otherwise, search in the right subtree.
+      e. Display "Value found" or "Value not found".
+
+7. If choice = 3 (Delete):
+      a. Read the value.
+      b. Search for the node to be deleted.
+      c. If the node has no child, delete it.
+      d. If the node has one child, replace it with its child.
+      e. If the node has two children, find the minimum node in the right subtree,
+         copy its value, and delete that node.
+
+8. If choice = 4 (Inorder Traversal):
+      a. Traverse the left subtree.
+      b. Visit the root node.
+      c. Traverse the right subtree.
+      d. Display the elements.
+
+9. If choice = 5, exit the program.
+10. Otherwise, display "Invalid choice".
+11. Repeat steps 3 to 10 until Exit is selected.
+12. Stop.
