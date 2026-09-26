@@ -1,0 +1,55 @@
+## Algorithm: Deque Operations Using Array
+
+**Step 1:** Start.
+
+**Step 2:** Initialize `front = -1`, `rear = -1` and create an array `deque[MAX]`.
+
+**Step 3:** Display the menu:
+
+1. Insert Front
+2. Insert Rear
+3. Delete Front
+4. Delete Rear
+5. Display
+6. Exit
+
+**Step 4:** Read the user's choice.
+
+**Step 5:** If the choice is **Insert Front**:
+
+* If `front == 0`, display **Deque Overflow**.
+* If the deque is empty, set `front = rear = 0`.
+* Otherwise, decrement `front`.
+* Insert the value at `deque[front]`.
+
+**Step 6:** If the choice is **Insert Rear**:
+
+* If `rear == MAX - 1`, display **Deque Overflow**.
+* If the deque is empty, set `front = rear = 0`.
+* Otherwise, increment `rear`.
+* Insert the value at `deque[rear]`.
+
+**Step 7:** If the choice is **Delete Front**:
+
+* If the deque is empty, display **Deque Underflow**.
+* Otherwise, delete and display `deque[front]`.
+* If `front == rear`, set `front = rear = -1`.
+* Otherwise, increment `front`.
+
+**Step 8:** If the choice is **Delete Rear**:
+
+* If the deque is empty, display **Deque Underflow**.
+* Otherwise, delete and display `deque[rear]`.
+* If `front == rear`, set `front = rear = -1`.
+* Otherwise, decrement `rear`.
+
+**Step 9:** If the choice is **Display**:
+
+* If the deque is empty, display **Deque is empty**.
+* Otherwise, display all elements from `front` to `rear`.
+
+**Step 10:** If the choice is **Exit**, terminate the program.
+
+**Step 11:** Repeat Steps 3–10 until the user chooses Exit.
+
+**Step 12:** Stop.
