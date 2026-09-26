@@ -1,0 +1,22 @@
+1. Start.
+2. Create three linked lists P1, P2 and P3 for the two input polynomials and the result.
+3. Read the number of terms of P1.
+4. Read the coefficient and exponent of each term and insert them into P1 in descending order of exponent.
+5. Read the number of terms of P2.
+6. Read the coefficient and exponent of each term and insert them into P2 in descending order of exponent.
+7. Set pointers to the first nodes of P1 and P2.
+8. Compare the exponents of the current nodes.
+9. If the exponents are equal:
+      Add the coefficients and insert the sum into P3.
+      Move both pointers to the next nodes.
+10. If the exponent of P1 is greater:
+      Copy the term of P1 into P3.
+      Move the P1 pointer to the next node.
+11. Otherwise:
+      Copy the term of P2 into P3.
+      Move the P2 pointer to the next node.
+12. Repeat steps 8 to 11 until either P1 or P2 becomes NULL.
+13. Copy all remaining terms of P1 or P2 into P3.
+14. Display P1, P2 and P3.
+15. Free all allocated memory.
+16. Stop.
