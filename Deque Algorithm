@@ -1,55 +1,45 @@
-## Algorithm: Deque Operations Using Array
+Algorithm: Deque Operations Using Array
 
-**Step 1:** Start.
+1. Start.
 
-**Step 2:** Initialize `front = -1`, `rear = -1` and create an array `deque[MAX]`.
+2. Initialize "front = -1", "rear = -1" and create an array "deque[MAX]".
 
-**Step 3:** Display the menu:
+3. Display the menu and read the user's choice.
 
-1. Insert Front
-2. Insert Rear
-3. Delete Front
-4. Delete Rear
-5. Display
-6. Exit
+4. If Insert Front is selected:
+   
+   - If "front == 0", display Deque Overflow.
+   - If the deque is empty, set "front = rear = 0".
+   - Otherwise, decrement "front".
+   - Insert the element at "deque[front]".
 
-**Step 4:** Read the user's choice.
+5. If Insert Rear is selected:
+   
+   - If "rear == MAX - 1", display Deque Overflow.
+   - If the deque is empty, set "front = rear = 0".
+   - Otherwise, increment "rear".
+   - Insert the element at "deque[rear]".
 
-**Step 5:** If the choice is **Insert Front**:
+6. If Delete Front is selected:
+   
+   - If the deque is empty, display Deque Underflow.
+   - Otherwise, delete and display "deque[front]".
+   - If "front == rear", set "front = rear = -1".
+   - Otherwise, increment "front".
 
-* If `front == 0`, display **Deque Overflow**.
-* If the deque is empty, set `front = rear = 0`.
-* Otherwise, decrement `front`.
-* Insert the value at `deque[front]`.
+7. If Delete Rear is selected:
+   
+   - If the deque is empty, display Deque Underflow.
+   - Otherwise, delete and display "deque[rear]".
+   - If "front == rear", set "front = rear = -1".
+   - Otherwise, decrement "rear".
 
-**Step 6:** If the choice is **Insert Rear**:
+8. If Display is selected:
+   
+   - If the deque is empty, display Deque is empty.
+   - Otherwise, display all elements from "front" to "rear".
 
-* If `rear == MAX - 1`, display **Deque Overflow**.
-* If the deque is empty, set `front = rear = 0`.
-* Otherwise, increment `rear`.
-* Insert the value at `deque[rear]`.
+9. If Exit is selected, terminate the program.
 
-**Step 7:** If the choice is **Delete Front**:
-
-* If the deque is empty, display **Deque Underflow**.
-* Otherwise, delete and display `deque[front]`.
-* If `front == rear`, set `front = rear = -1`.
-* Otherwise, increment `front`.
-
-**Step 8:** If the choice is **Delete Rear**:
-
-* If the deque is empty, display **Deque Underflow**.
-* Otherwise, delete and display `deque[rear]`.
-* If `front == rear`, set `front = rear = -1`.
-* Otherwise, decrement `rear`.
-
-**Step 9:** If the choice is **Display**:
-
-* If the deque is empty, display **Deque is empty**.
-* Otherwise, display all elements from `front` to `rear`.
-
-**Step 10:** If the choice is **Exit**, terminate the program.
-
-**Step 11:** Repeat Steps 3–10 until the user chooses Exit.
-
-**Step 12:** Stop.
+10. Repeat Steps 3 to 9 until the user selects Exit.
+11. Stop.
