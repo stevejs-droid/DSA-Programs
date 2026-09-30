@@ -1,0 +1,29 @@
+Algorithm: Linear Queue Operations Using Array
+
+1. Start.
+
+2. Initialize front = -1, rear = -1 and create an array queue[MAX].
+
+3. Display the menu and read the user's choice.
+
+4. If Enqueue is selected:
+   - If rear == MAX - 1, display Queue Overflow.
+   - If the queue is empty (front == -1), set front = 0.
+   - Increment rear.
+   - Insert the element at queue[rear].
+
+5. If Dequeue is selected:
+   - If the queue is empty (front == -1), display Queue Underflow.
+   - Otherwise, delete and display queue[front].
+   - Increment front.
+   - If front > rear, set front = rear = -1.
+
+6. If Display is selected:
+   - If the queue is empty (front == -1), display Queue is empty.
+   - Otherwise, display all elements from front to rear.
+
+7. If Exit is selected, terminate the program.
+
+8. Repeat Steps 3 to 7 until the user selects Exit.
+
+9. Stop.
