@@ -1,0 +1,16 @@
+1. Start
+2. Read the number of elements n
+3. Read n sorted elements into array A
+4. Read the target element data
+5. Set l = 0, r = n - 1
+6. Repeat steps 7 to 10 while l <= r:
+7.     mid = l + (r - l) / 2
+8.     If A[mid] == data then:
+           Print "Item found at index", mid
+           Go to step 12
+9.     Else if data < A[mid] then:
+           Set r = mid - 1
+10.    Else:
+           Set l = mid + 1
+11. Print "Item not found"
+12. Stop
