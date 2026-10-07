@@ -1,0 +1,21 @@
+1. Start
+2. Read the number of vertices n
+3. Read the adjacency matrix elements of size n x n
+4. Read the starting vertex start
+5. Initialize visited array of size n with all 0s
+6. Initialize queue pointers: front = 0, rear = -1
+7. Mark starting vertex as visited: visited[start] = 1
+8. Insert start into queue:
+       rear = rear + 1
+       queue[rear] = start
+9. Repeat steps 10 to 13 while queue is not empty (front <= rear):
+10.    Remove vertex u from front of queue:
+           u = queue[front]
+           front = front + 1
+11.    Print u
+12.    For each vertex v from 0 to n - 1:
+           If adj[u][v] == 1 and visited[v] == 0 then:
+               visited[v] = 1
+               rear = rear + 1
+               queue[rear] = v
+13. Stop
